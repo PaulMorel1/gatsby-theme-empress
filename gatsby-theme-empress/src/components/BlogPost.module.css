@@ -1,0 +1,27 @@
+.blogPostContainer {
+  max-width: var(--page-max-width);
+  padding: var(--padding-small) 0;
+}
+
+.blogPostContainer img {
+  max-width: 100%;
+}
+
+.metaContainer {
+  font-size: var(--font-size-small);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 640px) {
+  .metaContainer {
+    flex-direction: column;
+  }
+}
+
+.pinned {
+  margin: 0 var(--padding-xsmall);
+  display: inline-block;
+}

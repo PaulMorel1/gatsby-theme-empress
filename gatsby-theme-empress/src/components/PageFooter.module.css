@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.container ul {
+  padding-inline-start: 0;
+}
+
+.navigationLinks {
+  list-style: var(--navigation-list-style);
+  width: 100%;
+  text-align: left;
+}
+
+.navigationLink {
+  display: inline-block;
+  margin-right: var(--padding-small);
+}

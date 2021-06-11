@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.container h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.container ul {
+  padding-inline-start: 0;
+}
+
+.navigationLinks {
+  list-style: var(--navigation-list-style);
+  text-align: right;
+}
+
+.navigationLink {
+  display: inline-block;
+}
+
+.navigationLink:not(:last-child) {
+  margin-right: var(--padding-small);
+}

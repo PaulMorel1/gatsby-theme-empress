@@ -1,0 +1,9 @@
+node_modules/
+.cache/
+public
+example-site/node_modules/
+example-site/.cache/
+example-site/public
+gatsby-theme-empress/node_modules/
+gatsby-theme-empress/.cache/
+gatsby-theme-empress/public

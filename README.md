@@ -1,37 +1,12 @@
 # Empress
 
-Full featured Gatsby blog starter that allows you to run a fast static blog as cheaply as possible.
+## Description
 
-Created by Evan X. Merz.
+Empress is a feature complete static blog theme. If you finished the Gatsby tutorial and liked Gatsby, but you didn't want to waste time re-inventing basic features like tags, then this might be the right package for you.
 
-## About
+The goal of this project is a blog for the 21st century that has all the core features of a static blog, without any bloat.
 
-This is a feature complete static blog starter based on the Gatsby tutorial. So if you finished the Gatsby tutorial and you think Gatsby is great, but you don't want to waste time re-inventing basic features like tags, then this might be the right starter for you.
-
-The goal is a blog for the 21st century that has all the core features of a static blog, without any bloat.
-
-### But why no SASS? Styled Components? Typography?
-
-When I tried to set up a Gatsby blog using other starters/themes,
-I found that I couldn't upgrade to the latest version of
-major dependencies, such as Gatsby, due to a broken web of
-dependencies. For this reason I wanted to keep this blog
-as vanilla as possible.
-
-You can add any libraries that you like.
-
-## Requirements
-
-To use it out-of-the-box as intended, you need
-the following things.
-
-- a free GitHub account
-- a free AWS account
-- knowledge of git and markdown
-
-That allows you to hook into the power of AWS S3/CloudFront and GitHub Actions. Together these services will allow you to run a fast, modern blog without paying a cent (usually).
-
-## Features
+### Features
 
 Empress is a fully featured Gatsby blog starter.
 
@@ -43,6 +18,45 @@ Empress is a fully featured Gatsby blog starter.
 - Redirects
 - Hero banner
 - Google Analytics
+
+### But why no SASS? Styled Components? Typography?
+
+When I tried to set up a Gatsby blog using other starters/themes, I found that I couldn't upgrade to the latest version of major dependencies, such as Gatsby, due to a broken web of dependencies. For this reason I wanted to keep this blog as vanilla as possible.
+
+You can add any libraries that you like.
+
+## How to install
+
+1. This version of Empress is a theme, so you can install it from npm. See (https://www.npmjs.com/package/gatsby-theme-empress)[https://www.npmjs.com/package/gatsby-theme-empress].
+
+```
+npm install gatsby-theme-empress
+```
+
+2. Add the configuration to gatsby-config.js.
+
+```
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    "gatsby-theme-empress"
+  ],
+}
+```
+
+### Or try the starter
+
+Gatsby recommends using a theme rather than a starter, but if you want to start from the starter, then get it from GitHub: https://github.com/PaulMorel1/eMPress
+
+## Requirements
+
+To use it out-of-the-box as intended, you need the following things.
+
+- a free GitHub account
+- a free AWS account
+- knowledge of git and markdown
+
+That allows you to hook into the power of AWS S3/CloudFront and GitHub Actions. Together these services will allow you to run a fast, modern blog without paying a cent (usually).
 
 ## Development
 
@@ -63,6 +77,8 @@ yarn run build
 
 If you are using the built-in GitHub Actions integration, then just commit your new stuff and push to master on GitHub. Make sure you go through the setup on AWS and GitHub. You must create a public S3 bucket and a CloudFront distribution then save secret keys into your repo settings on GitHub.
 
+I'm not entirely sure that the AWS deployment script can be distributed with the theme, so see https://github.com/PaulMorel1/eMPress/blob/master/.github/workflows/buildAndDeployToS3.yml.
+
 ## How do I make a new visual theme?
 
 See `src\styles\themes\dark.css` for example.
@@ -80,6 +96,10 @@ See `src\styles\themes\dark.css` for example.
 ## How do I configure Google Analytics?
 
 1. Update the `trackingIds` field in `gatsby-config.js`. You must have signed up for Google Analytics already. Like everything else in an Empress Blog, it is free.
+
+## How to contribute
+
+Fork the repo and open a PR, then at-mention me to request a review. I'm open to any features that don't add significant dependencies.
 
 ## License
 

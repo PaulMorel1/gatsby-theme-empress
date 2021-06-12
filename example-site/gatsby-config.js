@@ -9,9 +9,9 @@ module.exports = {
     {
       resolve: "gatsby-theme-empress",
       options: {
-        "postsPath": `${__dirname}\\content\\posts`,
-        "pagesPath": `${__dirname}\\content\\pages`,
-        "menusPath": `${__dirname}\\content\\menus`,
+        "postsPath": `${__dirname}/content/posts`,
+        "pagesPath": `${__dirname}/content/pages`,
+        "menusPath": `${__dirname}/content/menus`,
         "theme": 'dark',
         "headerType": "hero",
         "desktopHeroImage": "david-clode-13PjNBaDMcg-unsplash.jpg",

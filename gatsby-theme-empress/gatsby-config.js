@@ -36,21 +36,21 @@ module.exports = themeOptions => {
       {
         resolve: "gatsby-source-filesystem",
         options: {
-          name: "content/posts",
+          name: "empressPosts",
           path: themeOptions.postsPath || '/content/posts',
         }
       },
       {
         resolve: "gatsby-source-filesystem",
         options: {
-          name: "content/pages",
+          name: "empressPages",
           path: themeOptions.pagesPath || '/content/posts',
         }
       },
       {
         resolve: "gatsby-source-filesystem",
         options: {
-          name: "content/menus",
+          name: "empressMenus",
           path: themeOptions.menusPath || '/content/menus',
         }
       },

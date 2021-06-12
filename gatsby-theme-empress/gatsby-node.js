@@ -125,6 +125,10 @@ exports.createPages = async({ graphql, actions }) => {
     }
   `);
 
+  if(result.data.posts.edges.length === 0) {
+    console.error("No posts found!");
+  }
+
   // These lists will be used for list pages
   let taggedPosts = [];
   let authorPosts = [];
@@ -132,7 +136,7 @@ exports.createPages = async({ graphql, actions }) => {
   // variables for pagination
   const postsPerPage = 5;
 
-  console.log(`Making posts...`);
+  console.log(`Making ${result.data.posts.edges.length} posts...`);
 
   // loop through each post and create the post pages
   result.data.posts.edges.forEach(({ node }) => {
@@ -191,7 +195,7 @@ exports.createPages = async({ graphql, actions }) => {
     }
   });
 
-  console.log(`Making pages...`);
+  console.log(`Making ${result.data.pages.edges.length} pages...`);
 
   makePages({ 
     createPage, 
@@ -200,7 +204,7 @@ exports.createPages = async({ graphql, actions }) => {
     pages: result.data.pages
   });
 
-  console.log(`Paginating the home page...`);
+  console.log(`Paginating the home page to ${result.data.posts.edges.length / postsPerPage} pages...`);
 
   makePaginatedIndex({ 
     createPage, 
@@ -209,7 +213,7 @@ exports.createPages = async({ graphql, actions }) => {
     postsPerPage
   });
 
-  console.log(`Making tag list pages...`);
+  console.log(`Making ${taggedPosts.length} tag list pages...`);
 
   makeTagListPages({ 
     createPage, 
@@ -218,7 +222,7 @@ exports.createPages = async({ graphql, actions }) => {
     postsPerPage
   });
 
-  console.log(`Making author list pages...`);
+  console.log(`Making ${authorPosts.length} author list pages...`);
 
   makeAuthorListPages({ 
     createPage, 

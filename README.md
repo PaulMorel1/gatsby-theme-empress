@@ -44,6 +44,26 @@ module.exports = {
 }
 ```
 
+## Available options
+
+The available options allow you to set up basic properties of your site.
+
+```
+    {
+      resolve: "gatsby-theme-empress",
+      options: {
+        "postsPath": `${__dirname}\\content\\posts`,
+        "pagesPath": `${__dirname}\\content\\pages`,
+        "menusPath": `${__dirname}\\content\\menus`,
+        "theme": 'dark',
+        "headerType": "hero",
+        "desktopHeroImage": "filename_in_static/images.jpg",
+        "mobileHeroImage": "filename_in_static/images.jpg",
+        "googleAnalyticsId": "FAKE_ID",
+      }
+    },
+```
+
 ### Or try the starter
 
 Gatsby recommends using a theme rather than a starter, but if you want to start from the starter, then get it from GitHub: https://github.com/PaulMorel1/eMPress

@@ -8,6 +8,7 @@ module.exports = themeOptions => {
       headerType: themeOptions.headerType || "normal", // change this to "hero" to use the hero banner header
       desktopHeroImage: themeOptions.desktopHeroImage || "",
       mobileHeroImage: themeOptions.mobileHeroImage || "",
+      empressPath: themeOptions.empressPath || "", // change to /blog to host your blog at /blog
     },
     plugins: [
       "gatsby-plugin-image",

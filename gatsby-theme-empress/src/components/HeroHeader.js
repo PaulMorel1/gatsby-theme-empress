@@ -14,17 +14,23 @@ import PageHeaderMenu from "./PageHeaderMenu.js";
 export default function HeroHeader() {
   const { site } = useStaticQuery(
     graphql`
-      query HeroHeaderQuery {
+      query {
         site {
           siteMetadata {
             title
             desktopHeroImage
             mobileHeroImage
+            empressPath
           }
         }
       }
     `,
   );
+
+  let empressPath = "/";
+  if(site.siteMetadata?.empressPath) {
+    empressPath = site.siteMetadata.empressPath;
+  }
 
   return (
     <header className={[HeroHeaderStyles.container].join(' ')}>
@@ -39,7 +45,7 @@ export default function HeroHeader() {
         alt={`Banner for ${site.siteMetadata.title}`}
       />
       <div className={HeroHeaderStyles.titleContainer}>
-        <Link to="/">
+        <Link to={empressPath}>
           <h1>{site.siteMetadata.title}</h1>
         </Link>
       </div>

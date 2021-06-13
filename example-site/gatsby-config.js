@@ -17,6 +17,7 @@ module.exports = {
         "desktopHeroImage": "david-clode-13PjNBaDMcg-unsplash.jpg",
         "mobileHeroImage": "david-clode-13PjNBaDMcg-unsplash.jpg",
         "googleAnalyticsId": "FAKE_ID",
+        "empressPath": "", // change this to "/blog" to have your blog live there 
       }
     },
   ],

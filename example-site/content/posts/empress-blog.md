@@ -19,4 +19,6 @@ The best thing about it is that it enables you to run a blog as cheaply as possi
 
 So pull the trigger. Fork Empress Blog and start your own media empire!
 
-Download the source code and get started at [https://github.com/PaulMorel1/eMPress](https://github.com/PaulMorel1/eMPress).
+Install the theme and get started [https://github.com/PaulMorel1/gatsby-theme-empress](https://github.com/PaulMorel1/gatsby-theme-empress).
+
+Or use the Empress starter to kick off your blog: [https://github.com/PaulMorel1/eMPress](https://github.com/PaulMorel1/eMPress).

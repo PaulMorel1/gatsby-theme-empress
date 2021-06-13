@@ -14,16 +14,17 @@ export default function PageHeader() {
       <div>
         <StaticQuery
           query={graphql`
-            query SiteTitleQuery {
+            query {
               site {
                 siteMetadata {
                   title
+                  empressPath
                 }
               }
             }
           `}
           render={data => (
-            <Link to="/">
+            <Link to={data.site.siteMetadata.empressPath ? data.site.siteMetadata.empressPath : "/"}>
               <h1>{data.site.siteMetadata.title}</h1>
             </Link>
           )} />

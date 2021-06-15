@@ -5,10 +5,12 @@ module.exports = themeOptions => {
   const config = {
     siteMetadata: {
       theme: themeOptions.theme || "light",
-      headerType: themeOptions.headerType || "normal", // change this to "hero" to use the hero banner header
-      desktopHeroImage: themeOptions.desktopHeroImage || "",
-      mobileHeroImage: themeOptions.mobileHeroImage || "",
       empressPath: themeOptions.empressPath || "", // change to /blog to host your blog at /blog
+      header: {
+        type: themeOptions.header.type || themeOptions.headerType || "normal", // change this to "hero" to use the hero banner header
+        desktopHeroImage: themeOptions.header?.desktopHeroImage || themeOptions.desktopHeroImage || "",
+        mobileHeroImage: themeOptions.header?.mobileHeroImage || themeOptions.mobileHeroImage || "",
+      }
     },
     plugins: [
       "gatsby-plugin-image",

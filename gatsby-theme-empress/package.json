@@ -1,7 +1,6 @@
 {
   "name": "gatsby-theme-empress",
   "version": "0.0.4",
-  "private": false,
   "description": "gatsby-theme-empress is a full featured gatsby blog theme with tags, visual themes, pinned posts, redirects, google analytics, hero banner, and more.",
   "author": "Evan X. Merz (http://www.evanxmerz.com)",
   "license": "CCBYNC3 (https://creativecommons.org/licenses/by-nc/3.0/)",
@@ -25,11 +24,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
-    "gatsby": "^3.5.0",
+    "gatsby": "^4.12.1",
     "gatsby-plugin-google-gtag": "^3.6.0",
     "gatsby-plugin-image": "^1.3.0",
     "gatsby-plugin-react-helmet": "^4.3.0",

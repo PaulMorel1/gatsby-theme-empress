@@ -27,6 +27,8 @@ You can add any libraries that you like.
 
 ## How to install
 
+Empress is a Gatsby theme. You must start with a Gatsby project to use it. Make sure you set up your Gatsby site before running this commands. See (Gatsby Quick Start)[https://www.gatsbyjs.com/docs/quick-start/].
+
 1. This version of Empress is a theme, so you can install it from npm. See (https://www.npmjs.com/package/gatsby-theme-empress)[https://www.npmjs.com/package/gatsby-theme-empress].
 
 ```

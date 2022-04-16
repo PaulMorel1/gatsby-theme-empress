@@ -8,7 +8,7 @@ const makePaginatedIndex = require("./src/helpers/gatsby-node/makePaginatedIndex
 
 // Ensure that the required directories exist
 exports.onPreBootstrap = ({ reporter }) => {
-  const requiredPaths = ["content", "content/authors", "content/posts", "content/pages", "content/menus", "static", "static/images"];
+  const requiredPaths = ["content", "content/authors", "content/posts", "content/pages", "content/menus", "content/images", "static", "static/images"];
 
   requiredPaths.forEach(path => {
     if(!fs.existsSync(path)) {
@@ -53,6 +53,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
+  // if the node is of type MarkdownRemark...
   if (node.internal.type === `MarkdownRemark`) {
     // get the parent directory
     const parent = getNode(node.parent);
@@ -98,6 +99,12 @@ exports.createPages = async({ graphql, actions }) => {
               author
               slug
               redirects
+              featuredImage {
+                publicURL
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             excerpt
           }
@@ -105,8 +112,8 @@ exports.createPages = async({ graphql, actions }) => {
       }
       empressPosts: allMarkdownRemark(
         sort: { 
-          fields: [frontmatter___pinned, frontmatter___date], 
-          order: [ASC, DESC] 
+          fields: [frontmatter___date, frontmatter___pinned], 
+          order: [DESC, DESC] 
         },
         filter: { 
           frontmatter: {
@@ -128,6 +135,12 @@ exports.createPages = async({ graphql, actions }) => {
               tags
               redirects
               pinned
+              featuredImage {
+                publicURL
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             html
             excerpt
@@ -145,7 +158,12 @@ exports.createPages = async({ graphql, actions }) => {
             frontmatter {
               title
               slug
-              featuredImage
+              featuredImage {
+                publicURL
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             excerpt
             html
@@ -222,10 +240,11 @@ exports.createPages = async({ graphql, actions }) => {
 
     // store each post under the author name
     if(node.frontmatter.author) {
-      if(!authorPosts[node.frontmatter.author]) {
-        authorPosts[node.frontmatter.author] = [{ node }];
+      const authorSlug = makeSlug(node.frontmatter.author);
+      if(!authorPosts[authorSlug]) {
+        authorPosts[authorSlug] = [{ node }];
       } else {
-        authorPosts[node.frontmatter.author].push({ node });
+        authorPosts[authorSlug].push({ node });
       }
     }
 
@@ -276,6 +295,7 @@ exports.createPages = async({ graphql, actions }) => {
     templatePath: require.resolve('./src/templates/post-list-page.js'),
     authorPosts, 
     postsPerPage,
-    empressPath: empressPath
+    empressPath,
+    authors,
   });
 };

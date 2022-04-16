@@ -8,6 +8,7 @@ date: "2021-05-25"
 author: "Evan X. Merz"
 published: true
 pinned: true
+featuredImage: ../images/david-clode-13PjNBaDMcg-unsplash.jpg
 tags: 
   - about
   - introduction

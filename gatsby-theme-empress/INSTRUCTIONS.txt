@@ -1,0 +1,47 @@
+How to get started with the Empress theme
+
+mkdir my-blog
+
+npm init
+
+npm install gatsby react react-dom gatsby-theme-empress
+
+npm install gatsby-plugin-image gatsby-plugin-react-helmet gatsby-plugin-sitemap gatsby-plugin-sharp gatsby-transformer-remark gatsby-remark-relative-images gatsby-remark-images gatsby-source-filesystem gatsby-plugin-google-gtag gatsby-transformer-json gatsby-transformer-sharp
+
+Add the following script to package.json: "develop": "gatsby develop"
+
+Create gatsby-config.js in the root of your project.
+
+Add the following code to gatsby-config.js
+
+module.exports = {
+  siteMetadata: {
+    title: "Site Name Placeholder",
+    description: "Site description placeholder.",
+    author: "Author Placeholder",
+    siteUrl: "https://www.SiteUrlPlaceholder.com",
+  },
+  plugins: [
+    {
+      resolve: "gatsby-theme-empress",
+      options: {
+        "postsPath": `${__dirname}\\content\\posts`,
+        "pagesPath": `${__dirname}\\content\\pages`,
+        "menusPath": `${__dirname}\\content\\menus`,
+        "theme": 'dark',
+        "headerType": "hero",
+        "desktopHeroImage": "david-clode-13PjNBaDMcg-unsplash.jpg",
+        "mobileHeroImage": "david-clode-13PjNBaDMcg-unsplash.jpg",
+        "googleAnalyticsId": "FAKE_ID",
+      }
+    },
+  ],
+};
+
+
+
+
+
+
+
+npm run develop

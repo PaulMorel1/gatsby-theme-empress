@@ -1,5 +1,6 @@
 node_modules/
 .cache/
+.yarn/
 public
 example-site/node_modules/
 example-site/.cache/

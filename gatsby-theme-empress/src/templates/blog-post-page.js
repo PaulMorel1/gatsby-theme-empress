@@ -11,6 +11,7 @@ const BlogPostPage = ({ data, pageContext }) => {
   const seoDetails = {
     title: post.frontmatter.title,
     description: post.excerpt,
+    image: post.frontmatter.featuredImage?.publicURL,
     blogPost: post,
   };
 
@@ -21,7 +22,13 @@ const BlogPostPage = ({ data, pageContext }) => {
 
   return (
     <PageLayout seo={seoDetails}>
-      <BlogPost post={post} fullText={true} empressPath={empressPath} author={pageContext.author} />
+      <BlogPost 
+        post={post} 
+        fullText={true} 
+        empressPath={empressPath} 
+        author={pageContext.author}
+        showSharing={true}
+        />
     </PageLayout>
   )
 };
@@ -50,6 +57,12 @@ export const query = graphql`
         tags
         slug
         pinned
+        featuredImage {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

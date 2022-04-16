@@ -89,6 +89,13 @@ yarn workspace example-site install
 yarn workspace example-site develop
 ```
 
+You may need to clear the gatsby caches at times.
+
+```
+yarn workspace gatsby-theme-empress clean
+yarn workspace example-site clean
+```
+
 ## Build
 
 ```

@@ -9,6 +9,7 @@ const BlogPage = ({ data }) => {
   const seoDetails = {
     title: page.frontmatter.title,
     description: page.excerpt,
+    image: page.frontmatter.featuredImage?.publicURL,
     blogPost: page,
   };
 
@@ -19,7 +20,13 @@ const BlogPage = ({ data }) => {
 
   return (
     <PageLayout seo={seoDetails}>
-      <BlogPost post={page} fullText={true} showMeta={false} type='page' empressPath={empressPath} />
+      <BlogPost
+        post={page}
+        fullText={true} 
+        showMeta={false} 
+        type='page' 
+        empressPath={empressPath} 
+        />
     </PageLayout>
   )
 };
@@ -46,6 +53,12 @@ export const query = graphql`
         date(formatString: "DD MMMM, YYYY")
         author
         slug
+        featuredImage {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

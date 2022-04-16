@@ -13,6 +13,7 @@ module.exports = {
         "pagesPath": `${__dirname}/content/pages`,
         "menusPath": `${__dirname}/content/menus`,
         "authorsPath": `${__dirname}/content/authors`,
+        "imagesPath": `${__dirname}/content/images`,
         "theme": 'dark',
         "googleAnalyticsId": "FAKE_ID",
         "empressPath": "", // change this to "/blog" to have your blog live there 

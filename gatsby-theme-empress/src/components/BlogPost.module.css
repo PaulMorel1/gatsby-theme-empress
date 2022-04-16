@@ -15,13 +15,28 @@
   align-items: flex-start;
 }
 
-@media only screen and (max-width: 640px) {
-  .metaContainer {
-    flex-direction: column;
-  }
-}
-
 .pinned {
   margin: 0 var(--padding-xsmall);
   display: inline-block;
 }
+
+.featuredImageContainer {
+  margin: var(--padding-small) 0;
+}
+
+.featuredImage {
+  height: 100%;
+  width: auto;
+} 
+
+/* mobile styles */
+@media only screen and (max-width: 640px) {
+  .metaContainer {
+    flex-direction: column;
+  }
+
+  .tagContainer {
+    margin-top: var(--padding-xsmall);
+  }
+}
+

@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const Seo = ({ description, title, twitterHandle, imageUrl, blogPost }) => {
+const Seo = ({ description, title, twitterHandle, image, blogPost }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -51,6 +51,23 @@ const Seo = ({ description, title, twitterHandle, imageUrl, blogPost }) => {
     }
   ];
 
+  // if an image url was passed in, then add the og tag for it
+  if(image) {
+    metaTags.push({
+      property: 'og:image',
+      content: image,
+    });
+  }
+
+  if(blogPost) {
+    // make the url for this post
+    metaTags.push({
+      property: 'og:url',
+      content: `${site.siteMetadata.siteUrl}/post/${blogPost.frontmatter.slug}`,
+    });
+  }
+
+  // define the BLogPostingSchema markup inline
   const BlogPostingSchema = (blogPost) => {
     if(!blogPost) {
       return '';
@@ -75,18 +92,11 @@ const Seo = ({ description, title, twitterHandle, imageUrl, blogPost }) => {
           givenName: authorFirstName,
           familyName: authorLastName
         },
-        datePublished: blogPost.frontmatter.date
+        datePublished: blogPost.frontmatter.date,
+        image: image,
       })}
     </script>;
   };
-
-  // if an image url was passed in, then add the og tag for it
-  if(imageUrl) {
-    metaTags.push({
-      property: 'og:image',
-      content: imageUrl,
-    })
-  }
   
   return (
     <Helmet
